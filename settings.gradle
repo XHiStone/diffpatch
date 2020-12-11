@@ -1,0 +1,3 @@
+include ':diffpatch'
+include ':app'
+rootProject.name = "DiffPatchDemo"
