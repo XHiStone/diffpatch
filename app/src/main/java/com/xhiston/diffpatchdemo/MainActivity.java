@@ -28,8 +28,14 @@ public class MainActivity extends AppCompatActivity {
     private DiffPatchUtil diffPatchUtil;
 
     private void dspatch() {
-        if (!new File(path).exists()) new File(path).mkdirs();
-        if (!new File(newPath).exists()) new File(newPath).mkdirs();
+        if (!new File(path).exists()) {
+            boolean mks = new File(path).mkdirs();
+            Log.e("MainActivity", "补丁包 mkdirs =" + mks);
+        }
+        if (!new File(newPath).exists()) {
+            boolean mks = new File(newPath).mkdirs();
+            Log.e("MainActivity", "新包 mkdirs =" + mks);
+        }
 //        File file = new File(patch);
 //        if (file.exists()) {
 //            int dif = DiffUpdateUtil.diff(getApplicationInfo().sourceDir, newApk, patch);
@@ -114,13 +120,13 @@ public class MainActivity extends AppCompatActivity {
 
     public void diffpatch(View v) {
         File file = new File(newApk);
-        Log.e("tag", "newApk=" + newApk);
+        Log.e("MainActivity", "newApk=" + newApk);
         if (file.exists()) {
             new Thread() {
                 @Override
                 public void run() {
                     int dif = diffPatchUtil.diff(getApplicationInfo().sourceDir, newApk, patch);
-                    Log.e("tag", "打Apk差分包 Environment=" + newApk);
+                    Log.e("MainActivity", "打Apk差分包 Environment=" + newApk);
                 }
             }.start();
         } else {
@@ -136,12 +142,12 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void run() {
                     int dif = diffPatchUtil.patch(getApplicationInfo().sourceDir, patchApk, patch);
-                    Log.e("tag", "组合Apk中 dif=" + dif);
+                    Log.e("MainActivity", "组合Apk中 dif=" + dif);
                 }
             }.start();
         } else {
             new File(path).mkdirs();
-            Toast.makeText(this, "新版包不存在", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "补丁包不存在", Toast.LENGTH_SHORT).show();
         }
     }
 
