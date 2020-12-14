@@ -1,5 +1,19 @@
 plugins {
     id 'com.android.library'
+    id 'maven'
+}
+
+
+uploadArchives {
+    repositories.mavenDeployer {
+        def mavenDirPath = file('E:\\Demo\\DiffPatchDemo') // 本地存放目录(自行选择)，可放在gradle.properties文件中引用
+        repository(url:"file://${mavenDirPath.absolutePath}") // 必须双引号，单引号不会转义$
+        pom.project {
+            groupId "com.xhiston.diffpatch" // 可以随意取，一般取包名
+            artifactId "diffpatch" // 可以随意取，一般取库的名字
+            version "1.0.0" // 版本号
+        }
+    }
 }
 
 android {

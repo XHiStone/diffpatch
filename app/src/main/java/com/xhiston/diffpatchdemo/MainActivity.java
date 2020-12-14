@@ -20,8 +20,6 @@ public class MainActivity extends AppCompatActivity {
     private String path = Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator + "差分包";
     private String newPath = Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator + "差分新包";
     private String patch = path + File.separator + "patch.patch";
-    //    private String newApk = newPath + File.separator + "new.apk";
-    String sdpath = Environment.getExternalStorageDirectory().getAbsolutePath();
     private String newApk = newPath + File.separator + "new.apk";
     private String oldApk = path + File.separator + "base.apk";
     private String patchApk = newPath + File.separator + "patch.apk";
