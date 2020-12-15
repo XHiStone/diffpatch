@@ -63,3 +63,4 @@ diffPatchUtil.patch(getApplicationInfo().sourceDir, patchApk, patch);
 ```
 <application android:requestLegacyExternalStorage="true" />
 ```
+最后别忘了下载[so库](https://github.com/XHiStone/DiffPatchDemo/tree/master/diffpatch/src/main/libs)导入项目，如果项目中发现有问题随时欢迎告知我及时修正。
