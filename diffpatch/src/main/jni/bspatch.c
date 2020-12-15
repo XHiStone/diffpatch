@@ -155,7 +155,7 @@ int mybspatch(JNIEnv *env, jobject clazz,int argc,char * argv[])
 		((old=malloc(oldsize+1))==NULL) ||
 		(lseek(fd,0,SEEK_SET)!=0) ||
 		(read(fd,old,oldsize)!=oldsize) ||
-		(close(fd)==-1)) errx(1,"社保文件 %s",argv[1]);
+		(close(fd)==-1)) errx(1,"当前文件 %s",argv[1]);
 	if((new=malloc(newsize+1))==NULL) err(1,NULL);
 
 	oldpos=0;newpos=0;
