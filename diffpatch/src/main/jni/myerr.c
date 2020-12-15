@@ -17,7 +17,7 @@ void onDiffStart(JNIEnv *env,jobject clazz){
     }
     jmethodID mid = (*env)->GetMethodID(env,myclass,"onDiffStart","()V");
      if(mid==0){
-         LOG_E("find method1 error");
+         LOG_E("find method error");
           return;
      }
      (*env)->CallVoidMethod(env,clazz,mid);
@@ -31,7 +31,7 @@ void onDiffSuccess(JNIEnv *env,jobject clazz){
     }
     jmethodID mid = (*env)->GetMethodID(env,myclass,"onDiffSuccess","()V");
      if(mid==0){
-         LOG_E("find method1 error");
+         LOG_E("find method error");
           return;
      }
      (*env)->CallVoidMethod(env,clazz,mid);
@@ -46,7 +46,7 @@ void onDiffError(JNIEnv *env,jobject clazz, char *msg){
     }
     jmethodID mid = (*env)->GetMethodID(env,myclass,"onDiffError","(Ljava/lang/String;)V");
      if(mid==0){
-         LOG_E("find method1 error");
+         LOG_E("find method error");
           return;
      }
      /*
@@ -63,7 +63,7 @@ void onPatchStart(JNIEnv *env,jobject clazz){
     }
     jmethodID mid = (*env)->GetMethodID(env,myclass,"onPatchStart","()V");
      if(mid==0){
-         LOG_E("find method1 error");
+         LOG_E("find method error");
           return;
      }
      (*env)->CallVoidMethod(env,clazz,mid);
@@ -77,7 +77,7 @@ void onPatchSuccess(JNIEnv *env,jobject clazz){
     }
     jmethodID mid = (*env)->GetMethodID(env,myclass,"onPatchSuccess","()V");
      if(mid==0){
-         LOG_E("find method1 error");
+         LOG_E("find method error");
           return;
      }
      (*env)->CallVoidMethod(env,clazz,mid);
@@ -92,7 +92,7 @@ void onPatchError(JNIEnv *env,jobject clazz, char *msg){
     }
     jmethodID mid = (*env)->GetMethodID(env,myclass,"onPatchError","(Ljava/lang/String;)V");
      if(mid==0){
-         LOG_E("find method1 error");
+         LOG_E("find method error");
           return;
      }
      /*
