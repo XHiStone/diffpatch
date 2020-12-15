@@ -4,7 +4,6 @@ buildscript {
     repositories {
         google()
         jcenter()
-        maven { url('https://oranges.bintray.com/DiffPatch') }
         google()
     }
     dependencies {
@@ -23,6 +22,11 @@ allprojects {
         jcenter()
         maven { url('https://oranges.bintray.com/DiffPatch') }
         google()
+    }
+
+    tasks.withType(Javadoc).all {
+        enabled = false
+        options.setEncoding('UTF-8')
     }
 }
 
